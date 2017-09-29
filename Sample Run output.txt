@@ -1,0 +1,409 @@
+All are in READY
+	**********************************************************
+	Thread Type		Priority	PID	Burst Time
+	**********************************************************
+	Dynamic thread  	   5		  0	   3
+   * Real time thread	   18		  1	   13
+	Dynamic thread  	   12		  2	   6
+	Dynamic thread  	   13		  3	   2
+   * Real time thread	   30		  4	   19
+   * Real time thread	   29		  5	   6
+	Dynamic thread  	   4		  6	   6
+	Dynamic thread  	   2		  7	   11
+	Dynamic thread  	   2		  8	   2
+	Dynamic thread  	   14		  9	   3
+	**********************************************************
+
+Before Sorting both the QUEUES
+	Round Robin READY QUEUE for Real Time Threads
+	**********************************************************
+	Thread Type		Priority	PID	Burst Time
+	**********************************************************
+	Real Time  		   18		  1	   13
+	Real Time  		   30		  4	   19
+	Real Time  		   29		  5	   6
+	**********************************************************
+
+
+	FIFO READY QUEUE for Dynamic Threads
+	**********************************************************
+	Thread Type		Priority	PID	Burst Time
+	**********************************************************
+	Dynamic    		   5		  0	   3
+	Dynamic    		   12		  2	   6
+	Dynamic    		   13		  3	   2
+	Dynamic    		   4		  6	   6
+	Dynamic    		   2		  7	   11
+	Dynamic    		   2		  8	   2
+	Dynamic    		   14		  9	   3
+	**********************************************************
+
+After Sorting both the QUEUES
+	Round Robin READY QUEUE for Real Time Threads
+	**********************************************************
+	Thread Type		Priority	PID	Burst Time
+	**********************************************************
+	Real Time  		   30		  4	   19
+	Real Time  		   29		  5	   6
+	Real Time  		   18		  1	   13
+	**********************************************************
+ 
+	FIFO READY QUEUE for Dynamic Threads
+	**********************************************************
+	Thread Type		Priority	PID	Burst Time
+	**********************************************************
+	Dynamic    		   14		  9	   3
+	Dynamic    		   13		  3	   2
+	Dynamic    		   12		  2	   6------->Needs I/O
+	Dynamic    		   5		  0	   3------->Needs I/O
+	Dynamic    		   4		  6	   6
+	Dynamic    		   2		  7	   11------>Needs I/O
+	Dynamic    		   2		  8	   2
+	**********************************************************
+
+Ready any value followed by enter key:(5 zoom in):
+
+Real Time burst time :19
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 19
+		|	  P4	    	    
+		|                   |   Remaining Burst Time : 16
+		|                   |
+		|___________________|   Priority             : 30
+
+
+Real Time burst time :6
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 6
+		|	  P5           
+		|                   |   Remaining Burst Time : 3
+		|                   |
+		|___________________|   Priority             : 29
+
+
+Real Time burst time :13
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 13
+		|	  P1           
+		|                   |   Remaining Burst Time : 10
+		|                   |
+		|___________________|   Priority             : 18
+ 
+Real Time burst time :16
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 16
+		|	  P4
+		|                   |   Remaining Burst Time : 13
+		|                   |
+		|___________________|   Priority             : 30
+
+
+Real Time burst time :3
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 3
+		|	  P5	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 29
+
+
+Real Time burst time :10
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 10
+		|	  P1	    
+		|                   |   Remaining Burst Time : 7
+		|                   |
+		|___________________|   Priority             : 18
+
+
+Real Time burst time :13
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 13
+		|	  P4	    
+		|                   |   Remaining Burst Time : 10
+		|                   |
+		|___________________|   Priority             : 30
+
+
+Real Time burst time :7
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 7
+		|	  P1	    
+		|                   |   Remaining Burst Time : 4
+		|                   |
+		|___________________|   Priority             : 18
+
+
+Real Time burst time :10
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 10
+		|	  P4	    
+		|                   |   Remaining Burst Time : 7
+		|                   |
+		|___________________|   Priority             : 30
+
+
+Real Time burst time :4
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 4
+		|	  P1	    
+		|                   |   Remaining Burst Time : 1
+		|                   |
+		|___________________|   Priority             : 18
+
+
+Real Time burst time :7
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 7
+		|	  P4	    
+		|                   |   Remaining Burst Time : 4
+		|                   |
+		|___________________|   Priority             : 30
+
+
+Real Time burst time :1
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 1
+		|	  P1	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 18
+
+
+Real Time burst time :4
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 4
+		|	  P4	    
+		|                   |   Remaining Burst Time : 1
+		|                   |
+		|___________________|   Priority             : 30
+
+
+Real Time burst time :1
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 1
+		|	  P4	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 30
+
+
+RT Process Queue Serviced
+Dynamic Processes:7
+Dynamic burst time :3
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 3
+		|	  P9	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 14
+
+
+Dynamic burst time :2
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 2
+		|	  P3	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 13
+
+
+Dynamic burst time :6
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 1
+		|	  P2	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 12
+
+//P2 Requested for I/O
+
+
+
+
+
+
+
+
+
+Real Time process COUNT :1
+Real Time burst time :5
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 5
+		|	  P2	    
+		|                   |   Remaining Burst Time : 2
+		|                   |
+		|___________________|   Priority             : 22
+
+
+Real Time burst time :2
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 2
+		|	  P2	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 22
+
+
+RT Process Queue Serviced
+Dynamic Processes:6
+Dynamic burst time :3
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 1
+		|	  P0	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 5
+
+//P0 Requested for I/O
+
+
+Real Time process COUNT :1
+Real Time burst time :2
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 2
+		|	  P0	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 16
+
+RT Process Queue Serviced
+ 
+Dynamic Processes:5
+Dynamic burst time :6
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 6
+		|	  P6	    
+		|                   |   Remaining Burst Time : 3
+		|                   |
+		|___________________|   Priority             : 4
+
+
+Dynamic burst time :11
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 0
+		|	  P7	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 2
+
+//P7 Requested for I/O
+
+
+Real Time process COUNT :1
+Real Time burst time :11
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 11
+		|	  P7	    
+		|                   |   Remaining Burst Time : 8
+		|                   |
+		|___________________|   Priority             : 16
+
+
+Real Time burst time :8
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 8
+		|	  P7	    
+		|                   |   Remaining Burst Time : 5
+		|                   |
+		|___________________|   Priority             : 16
+
+ 
+Real Time burst time :5
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 5
+		|	  P7	    
+		|                   |   Remaining Burst Time : 2
+		|                   |
+		|___________________|   Priority             : 16
+
+
+Real Time burst time :2
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 2
+		|	  P7	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 16
+
+
+RT Process Queue Serviced
+Dynamic Processes:4
+Dynamic burst time :3
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 3
+		|	  P6	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 4
+
+
+Dynamic burst time :2
+		      PROCESSOR
+		 ___________________
+		|                   |
+		|                   |   Burst Time           : 2
+		|	  P8	    
+		|                   |   Remaining Burst Time : 0
+		|                   |
+		|___________________|   Priority             : 2
+
+
+//End of Output.	All processes / threads are serviced.  
+All the queues are empty. (That is not the case in real world, until the system downs.  Only for the purpose demonstration we have made the ready queue as empty).
